@@ -1,7 +1,8 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 
 const Card = ({ name, username, id }) => {
+
+ 
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
@@ -9,6 +10,9 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className="card">
+        <img src='' alt="card"></img>
+        <p>{name}</p>
+        <p>{username}</p>
         {/* En cada card deberan mostrar en name - username y el id */}
 
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
