@@ -11,7 +11,6 @@ const Home = () => {
   const {data} = state
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/users`).then((response) => {
-      console.log(response)
       dispatch({
         type: 'UPDATE_DATA',
         payload: response.data

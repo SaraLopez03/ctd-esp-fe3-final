@@ -1,14 +1,19 @@
 import React from 'react'
+import DH from '../assets/DH.png'
+import FB from '../assets/ico-facebook.png'
+import INSTA from '../assets/ico-instagram.png'
+import TIK from '../assets/ico-tiktok.png'
+import WPP from '../assets/ico-whatsapp.png'
 
 const Footer = () => {
   return (
     <footer>
-        <img src="/DH.png" alt='DH-logo' />
+        <img src={DH} alt='DH-logo' />
         <div>
-          <img src="public/images/ico-facebook.png" alt='DH-logo' />
-          <img src="public/images/ico-instagram.png" alt='DH-logo' />
-          <img src="public/images/ico-tiktok.png" alt='DH-logo' />
-          <img src="public/images/ico-whatsapp.png" alt='DH-logo' />
+          <img src={FB} alt='facebook' />
+          <img src={INSTA} alt='instagram' />
+          <img src={TIK} alt='tiktok' />
+          <img src={WPP} alt='whatsapp' />
         </div>
     </footer>
   )

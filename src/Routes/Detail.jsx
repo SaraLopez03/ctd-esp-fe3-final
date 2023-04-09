@@ -1,18 +1,16 @@
 import React, { useState, useEffect} from 'react'
 import axios from 'axios'
-import { useSearchParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
-const Detail = () => {
+const Detail = (prop) => {
   const [dentist, setDentist] = useState({})
+  const {id} = useParams()
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search)
-    console.log(urlParams.get('id'))
-    axios.get(`https://jsonplaceholder.typicode.com/users/1`).then((response) => {
-      console.log(response)
-      
+    axios.get(`https://jsonplaceholder.typicode.com/users/${id}`).then((response) => {
+      setDentist(response.data)
     })
   })
  
@@ -32,10 +30,10 @@ const Detail = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Daniel</td>
-            <td>jjidnscjwkc@hotmail.com</td>
-            <td>857473783</td>
-            <td>jjidnscjwkc@hotmail.com</td>
+            <td>{dentist.name}</td>
+            <td>{dentist.email}</td>
+            <td>{dentist.phone}</td>
+            <td>{dentist.website}</td>
           </tr>
         </tbody>
       </table>

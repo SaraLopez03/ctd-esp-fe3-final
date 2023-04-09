@@ -119,3 +119,8 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.style-card{
+  width: 98%;
+  height: 57%;
+}

@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
+import doctor from "../assets/doctor.jpg"
+import { useNavigate } from "react-router-dom";
+
 
 const Card = ({ name, username, id }) => {
+  const navigate = useNavigate()
 
  
 
@@ -8,10 +12,14 @@ const Card = ({ name, username, id }) => {
     // Aqui iria la logica para agregar la Card en el localStorage
   }
 
+  const details = () => {
+    navigate(`/dentist/${id}`)
+  }
+
   return (
-    <div className="card">
-        <img src='' alt="card"></img>
-        <p>{name}</p>
+    <div className="card" >
+        <img src={doctor} alt="card" className="style-card"/>
+        <p onClick={details}>{name}</p>
         <p>{username}</p>
         {/* En cada card deberan mostrar en name - username y el id */}
 
