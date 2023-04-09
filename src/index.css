@@ -124,3 +124,7 @@ tr:nth-child(even) {
   width: 98%;
   height: 57%;
 }
+
+.detail-pointer{
+  cursor: pointer;
+}

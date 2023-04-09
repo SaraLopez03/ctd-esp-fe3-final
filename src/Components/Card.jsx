@@ -9,6 +9,19 @@ const Card = ({ name, username, id }) => {
  
 
   const addFav = ()=>{
+    const favorites = JSON.parse(localStorage.getItem('favorites'));
+    const newFavorites = {
+      name: name,
+      username: username,
+      id: id
+    };
+    if (favorites) {
+      favorites.push(newFavorites)
+      localStorage.setItem('favorites', JSON.stringify(favorites))
+    } else {
+      localStorage.setItem('favorites',JSON.stringify([newFavorites]))
+    }
+    
     // Aqui iria la logica para agregar la Card en el localStorage
   }
 
@@ -19,13 +32,8 @@ const Card = ({ name, username, id }) => {
   return (
     <div className="card" >
         <img src={doctor} alt="card" className="style-card"/>
-        <p onClick={details}>{name}</p>
+        <p className="detail-pointer" onClick={details}>{name}</p>
         <p>{username}</p>
-        {/* En cada card deberan mostrar en name - username y el id */}
-
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
         <button onClick={addFav} className="favButton">Add fav</button>
     </div>
   );

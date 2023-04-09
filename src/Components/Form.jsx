@@ -7,8 +7,8 @@ const Form = () => {
   return (
     <div>
       <form>
-        <input placeholder="Full name" type="text" name="fullname" value=""/>
-        <input placeholder="Email" type="email" name="email" value=""/>
+        <input placeholder="Full name" type="text" name="fullname"/>
+        <input placeholder="Email" type="email" name="email"/>
         <input type="submit" value="submit"/>
       </form>
     </div>

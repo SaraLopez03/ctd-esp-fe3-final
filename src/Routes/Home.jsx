@@ -8,7 +8,7 @@ import { ContextGlobal, ContextProvider } from '../Components/utils/global.conte
 const Home = () => {
   const context = useContext(ContextGlobal)
   const {state,dispatch} = context
-  const {data} = state
+  const {data, theme} = state
   useEffect(() => {
     axios.get(`https://jsonplaceholder.typicode.com/users`).then((response) => {
       dispatch({
@@ -18,7 +18,7 @@ const Home = () => {
     })
   })
   return (
-    <main className="" >
+    <main className={theme == 'dark' ? "dark" : ""} >
       <h1>Home</h1>
       <div className='card-grid'>
         {
